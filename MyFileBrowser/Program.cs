@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace MyFileBrowser
 {
     class Program
     {
         static void Main(string[] args)
-        { 
+        {
+            string letters = "Dit is een test";
             if (args.Length == 0)
             {
                 Console.WriteLine("Geef een argument!");
@@ -32,19 +34,19 @@ namespace MyFileBrowser
                     case "-h":
                         ShowHelp();
                         break;
-                    
+                    case 
                 }
             }
         }
 
         static void ShowCurrentDirectory()
         {
-            Console.WriteLine("Current directory");
+            Console.WriteLine(Environment.CurrentDirectory);
         }
 
         static void ShowAllFilesCurrentDirecty()
         {
-            Console.WriteLine("All files in current directory");
+           //onsole.WriteLine(Directory.GetFiles());
         }
 
         static void ShowSubdirectoryCurerntFile()
@@ -62,5 +64,12 @@ namespace MyFileBrowser
             Console.WriteLine("Show help");
         }
 
+        static void Test()
+        {
+            if (int i = 0; i < letters.Length; i++)
+            {
+                Console.WriteLine(letters[if];
+            }
+        }
     }
 }
