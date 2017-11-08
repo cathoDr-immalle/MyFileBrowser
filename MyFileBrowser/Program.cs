@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -13,7 +14,8 @@ namespace MyFileBrowser
             string letters = "Dit is een test";
             if (args.Length == 0)
             {
-                Console.WriteLine("Geef een argument!");
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("Geef een argument!"); 
             }
             else
             {
@@ -23,53 +25,70 @@ namespace MyFileBrowser
                         ShowCurrentDirectory();
                         break;
                     case "-f":
-                        ShowAllFilesCurrentDirecty();
+                        ShowAllFilesCurrentDirectory();
                         break;
                     case "-d":
-                        ShowSubdirectoryCurerntFile();
-                        break;
-                    default:
-                        UnknownArgument();
+                        ShowSubdirectoryCurrentDirectory();
                         break;
                     case "-h":
                         ShowHelp();
                         break;
-                    case 
+                     default:
+                        UnknownArgument();
+                        break;
                 }
             }
         }
 
         static void ShowCurrentDirectory()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Current Directory:");
+
             Console.WriteLine(Environment.CurrentDirectory);
         }
 
-        static void ShowAllFilesCurrentDirecty()
+        static void ShowAllFilesCurrentDirectory()
         {
-           //onsole.WriteLine(Directory.GetFiles());
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("All files in current directory:");
+
+            foreach (string file in Directory.GetFiles(Environment.CurrentDirectory))
+            {
+                Console.WriteLine(file);
+            }
         }
 
-        static void ShowSubdirectoryCurerntFile()
+        static void ShowSubdirectoryCurrentDirectory()
         {
-            Console.WriteLine("subdirectory in current file");
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("subdirectory in current Directory:");
+
+            foreach (string SubDirectory in Directory.GetDirectories(Environment.CurrentDirectory))
+            {
+                Console.WriteLine(SubDirectory);
+            }
+        }
+        
+        static void ShowHelp()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("help: -c / -f / -d / -h");
         }
 
         static void UnknownArgument()
         {
-            Console.WriteLine("Unknown argument");
-        }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Unknown Argument:");
 
-        static void ShowHelp()
-        {
-            Console.WriteLine("Show help");
-        }
+            Console.WriteLine(Environment.CurrentDirectory);
 
-        static void Test()
-        {
-            if (int i = 0; i < letters.Length; i++)
+            foreach (string file in Directory.GetFiles(Environment.CurrentDirectory))
             {
-                Console.WriteLine(letters[if];
+                Console.WriteLine(file);
             }
         }
+
     }
+    
 }
