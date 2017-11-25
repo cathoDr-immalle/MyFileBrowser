@@ -14,7 +14,7 @@ namespace MyFileBrowser
             string letters = "Dit is een test";
             if (args.Length == 0)
             {
-                Console.ForegroundColor = ConsoleColor.Black;
+                //Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("Geef een argument!"); 
             }
             else
@@ -42,7 +42,7 @@ namespace MyFileBrowser
 
         static void ShowCurrentDirectory()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            //Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Current Directory:");
 
             Console.WriteLine(Environment.CurrentDirectory);
@@ -50,7 +50,7 @@ namespace MyFileBrowser
 
         static void ShowAllFilesCurrentDirectory()
         {
-            Console.ForegroundColor = ConsoleColor.Gray;
+            //Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("All files in current directory:");
 
             foreach (string file in Directory.GetFiles(Environment.CurrentDirectory))
@@ -61,7 +61,7 @@ namespace MyFileBrowser
 
         static void ShowSubdirectoryCurrentDirectory()
         {
-            Console.ForegroundColor = ConsoleColor.Magenta;
+            //Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("subdirectory in current Directory:");
 
             foreach (string SubDirectory in Directory.GetDirectories(Environment.CurrentDirectory))
@@ -72,13 +72,13 @@ namespace MyFileBrowser
         
         static void ShowHelp()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            //Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("help: -c / -f / -d / -h");
         }
 
         static void UnknownArgument()
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            //Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Unknown Argument:");
 
             Console.WriteLine(Environment.CurrentDirectory);
